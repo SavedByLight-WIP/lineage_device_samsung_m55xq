@@ -4,9 +4,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_qssi.mk
+    $(LOCAL_DIR)/lineage_m55xq.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_qssi-user \
-    lineage_qssi-userdebug \
-    lineage_qssi-eng
+    lineage_m55xq-user \
+    lineage_m55xq-userdebug \
+    lineage_m55xq-eng
