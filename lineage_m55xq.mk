@@ -7,14 +7,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from qssi device
-$(call inherit-product, device/samsung/qssi/device.mk)
+# Inherit from m55xq device
+$(call inherit-product, device/samsung/m55xq/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_DEVICE := qssi
-PRODUCT_NAME := lineage_qssi
+PRODUCT_DEVICE := m55xq
+PRODUCT_NAME := lineage_m55xq
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-M556B
 PRODUCT_MANUFACTURER := samsung
