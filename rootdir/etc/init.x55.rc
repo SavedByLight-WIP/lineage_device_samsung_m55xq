@@ -1,0 +1,74 @@
+on init
+# M55 code for SR-QN6887A-01-225 by zhaoxinagxiang at 20230822 start
+    mkdir /mnt/vendor/sec_efs 0777 system system
+    mkdir /mnt/vendor/efs 0777 system system
+
+on post-fs
+    chown system system /mnt/vendor/sec_efs
+    chmod 0777 /mnt/vendor/sec_efs
+    restorecon_recursive /mnt/vendor/sec_efs
+    chown system system /mnt/vendor/efs
+    chmod 0777 /mnt/vendor/efs
+    restorecon_recursive /mnt/vendor/efs
+
+# M55 code for SR-QN6887A-01-321 by gaochao at 20231023 start
+    chown system system /dev/grdm
+    chmod 0660 /dev/grdm
+# M55 code for SR-QN6887A-01-321 by gaochao at 20231023 end
+# M55 code for SR-QN6887A-01-318 by gaochao at 20231023 start
+    chown system system /dev/k250a
+    chmod 0660 /dev/k250a
+# M55 code for SR-QN6887A-01-318 by gaochao at 20231023 end
+# M55 code for SR-QN6887A-01-1023 by gaochao at 20231031 start
+    chown system system /dev/k250a-i2c
+    chmod 0660 /dev/k250a-i2c
+# M55 code for SR-QN6887A-01-1023 by gaochao at 20231031 end
+# M55 code for QN6887A-1522|2550 by hehaoran at 20231205 start
+#display
+    chmod 0660 /sys/class/display/display_ctrl/lhbm_mode_set
+    chown system system /sys/class/display/display_ctrl/lhbm_mode_set
+    chmod 0660 /sys/class/display/display_ctrl/hbm_mode_set
+    chown system system /sys/class/display/display_ctrl/hbm_mode_set
+    chmod 0440 /sys/class/display/display_ctrl/cell_id
+    chown system system /sys/class/display/display_ctrl/cell_id
+    chmod 0440 /sys/class/display/display_ctrl/window_type
+    chown system system /sys/class/display/display_ctrl/window_type
+# M55 code for QN6887A-1522|2550 by hehaoran at 20231205 end
+# M55 code for SR-QN6887A-01-462 by zhangziyi at 2023/10/18 start
+on post-fs-data
+# sensor
+    chmod 0662 /sys/devices/platform/soc/98c000.i2c/i2c-2/2-002c/receiver_turnon
+    chown system system /sys/devices/platform/soc/98c000.i2c/i2c-2/2-002c/receiver_turnon
+# M55 code for SR-QN6887A-01-462 by zhangziyi at 2023/10/18 end
+# M55 code for QN6887A-495 by tangjie at 2023/10/31 start
+#audio
+    chmod 0777 /mnt/vendor/persist/fsalgo_rdc.bin
+    chown system system /mnt/vendor/persist/fsalgo_rdc.bin
+# M55 code for QN6887A-495 by tangjie at 2023/10/31 end
+# M55 code for SR-QN6887A-01-225 by zhaoxinagxiang at 20230822 end
+# M55 code for SR-QN6887A-01-515 by liufurong at 20231116 start
+# charge
+on boot
+    wait /sys/class/sec/switch/afc_disable
+    chown system radio /sys/class/sec/switch/afc_disable
+    #M55 code for P240223-06508 by liufurong at 20240224 start
+    #M55 code for P231128-07791 by lina at 20231130 start
+    wait /sys/class/power_supply/battery/batt_full_capacity
+    chown system radio /sys/class/power_supply/battery/batt_full_capacity
+    #M55 code for P231128-07791 by lina at 20231130 end
+    #M55 code for P231122-06687 by lina at 20231212 start
+    wait /sys/class/power_supply/battery/batt_soc_rechg
+    chown system radio /sys/class/power_supply/battery/batt_soc_rechg
+    #M55 code for P231122-06687 by lina at 20231212 end
+    #M55 code for P231214-04810 by xiongxiaoliang at 20231218 start
+    wait /sys/class/power_supply/battery/batt_slate_mode
+    chown system radio /sys/class/power_supply/battery/batt_slate_mode
+    wait /sys/class/power_supply/battery/batt_misc_event
+    chown system radio /sys/class/power_supply/battery/batt_misc_event
+    #M55 code for P231214-04810 by xiongxiaoliang at 20231218 end
+    #M55 code for P240223-06508 by liufurong at 20240224 end
+# M55 code for SR-QN6887A-01-515 by liufurong at 20231116 end
+# M55 code for P231028-02874 by lichang at 20231113 end
+on late-init
+    write /sys/class/leds/vibrator/trigger "transient"
+# M55 code for P231028-02874 by lichang at 20231113 end
