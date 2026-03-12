@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/samsung/qssi
+DEVICE_PATH := device/samsung/m55xq
 
 # Architecture
 TARGET_ARCH := arm64
