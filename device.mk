@@ -111,6 +111,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     wpa_cli
 
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/wlan
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
