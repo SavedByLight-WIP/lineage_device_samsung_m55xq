@@ -129,7 +129,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml
     
 # Bluetooth
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.qti \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
