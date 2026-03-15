@@ -2113,6 +2113,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.wifi</name>
+         <version>2.3</version>
         <interface>
             <name>ISehWifi</name>
             <instance>default</instance>
