@@ -203,6 +203,30 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <version>2.2</version>
+        <interface>
+            <name>IImsCmService</name>
+            <instance>qti.ims.connectionmanagerservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.imsrtpservice</name>
+        <version>3.0</version>
+        <interface>
+            <name>IRTPService</name>
+            <instance>imsrtpservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>com.qualcomm.qti.uceservice</name>
+        <version>2.3</version>
+        <interface>
+            <name>IUceService</name>
+            <instance>com.qualcomm.qti.uceservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>com.quicinc.cne.api</name>
         <version>1.0-1</version>
         <interface>
@@ -1747,6 +1771,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.bluetooth.audio</name>
+        <version>2.1</version>
+        <interface>
+            <name>ISehBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.displayquality</name>
         <interface>
@@ -1812,6 +1844,14 @@
         <version>5</version>
         <interface>
             <name>ISehMppStore</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.miscpower</name>
+        <version>2.0</version>
+        <interface>
+            <name>ISehMiscPower</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -1955,6 +1995,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.security.hdcp.wifidisplay</name>
+        <version>2.0</version>
+        <interface>
+            <name>ISehHdcp</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.security.hermes</name>
         <interface>
@@ -1983,6 +2031,18 @@
         <interface>
             <name>ISehSkpm</name>
             <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.snap</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISehSnap</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISehSnap</name>
+            <instance>secsnap</instance>
         </interface>
     </hal>
     <hal format="aidl" optional="true">
@@ -2014,20 +2074,9 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.samsung.hardware.snap</name>
-        <version>3</version>
-        <interface>
-            <name>ISehSnap</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
+    <hal format="hidl" optional="true">
         <name>vendor.samsung.hardware.sysinput</name>
-        <version>2</version>
-        <interface>
-            <name>ISehSysInputCallback</name>
-        </interface>
+        <version>1.3</version>
         <interface>
             <name>ISehSysInputDev</name>
             <instance>default</instance>
@@ -2057,6 +2106,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.tlc.ucm</name>
+        <version>2.0</version>
+        <interface>
+            <name>ISehUcm</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.wifi</name>
         <interface>
@@ -2064,10 +2121,26 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.wifi.hostapd</name>
+        <version>4.0</version>
+        <interface>
+            <name>ISehHostapd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.wifi.nan</name>
         <interface>
             <name>IWifiVendorNan</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.wifi.supplicant</name>
+        <version>3.1</version>
+        <interface>
+            <name>ISehSupplicant</name>
             <instance>default</instance>
         </interface>
     </hal>
