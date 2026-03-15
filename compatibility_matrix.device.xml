@@ -2039,6 +2039,7 @@
         <interface>
             <name>ISehSnap</name>
             <instance>default</instance>
+            <instance>secsnap</instance>
         </interface>
     </hal>
     <hal format="aidl" optional="true">
