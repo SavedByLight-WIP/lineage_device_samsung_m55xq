@@ -83,7 +83,9 @@ PRODUCT_PACKAGES += \
     init.x55.rc \
     init.recovery.qcom.rc \
     init.recovery.samsung.rc \
-    
+   
+LOCAL_NOTICE_FILE := $(DEVICE_PATH)/NOTICE.xml.gz
+ 
  # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
