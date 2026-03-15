@@ -66,6 +66,9 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 # Platform
 TARGET_BOARD_PLATFORM := taro
 
+# config.fs
+TARGET_FS_CONFIG_GEN += $(LOCAL_PATH)/config.fs
+
 # NFC
 TARGET_USES_NQ_NFC := true
 
