@@ -1,41 +1,4 @@
-<!--
-    Input:
-        vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/snap/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/nfc/2.0/device_framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/engmode/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/vaultkeeper/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/sysinput/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/media/converter/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/widevine/keyprov/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/wifi/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/wifi/nan/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/displayquality/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/hyper/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/vibrator/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/tlc/payment/1.0/tlc_payment_compatibility_matrix.xml
-        vendor/samsung/interfaces/tlc/iccc/1.0/vendor.samsung.hardware.tlc.iccc@1.0-matrix.xml
-        vendor/samsung/interfaces/tlc/kg/aidl/vendor.samsung.hardware.tlc.kg-matrix.xml
-        vendor/samsung/interfaces/audio/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/system/security/drk/drk_hidl_framework_compatibility_matrix.xml
-        vendor/samsung/system/security/drk/drk_aidl_framework_compatibility_matrix.xml
-        vendor/samsung/system/security/skeymaster/common/configs/skeymint_v100_framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/authfw/1.0/vendor.samsung.hardware.authfw@1.0-matrix.xml
-        vendor/samsung/interfaces/authfw/aidl/vendor.samsung.hardware.authfw-matrix.xml
-        vendor/samsung/interfaces/biometrics/fingerprint/3.0/fingerprint_compatibility_matrix.xml
-        vendor/samsung/external/fingerprint/fingerprint_nontz_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/hermes/aidl/hermes_framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/fkeymaster/aidl/fkeymaster_framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/rtts/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/security/ssu/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/frameworks/av/media/vendor/mpp/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/external/sem/hidl/1.0/framework_compatibility_matrix.xml
-        vendor/samsung/external/skpm/hidl/1.0/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/snap/aidl/framework_compatibility_matrix.xml
-        vendor/samsung/interfaces/nfc/2.0/device_framework_compatibility_matrix.xml
-        vendor/samsung/hardware/ril/URC/fcm/radio_framework_compatibility_matrix.xml
--->
-<compatibility-matrix version="2.0" type="framework">
+<compatibility-matrix version="2.0" type="device" level="6">
     <hal format="aidl" optional="true">
         <name>android.hardware.authsecret.qti.spu</name>
         <interface>
