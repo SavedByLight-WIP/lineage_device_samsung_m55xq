@@ -154,5 +154,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/m55xq/compatibility_matrix.device.xml
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/m55xq/m55xq-vendor.mk)
