@@ -1,34 +1,133 @@
-# Qualcomm-specific AID definitions
-# Values must be within vendor reserved range (2900-2999) [citation:3]
+[efs/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_RADIO
+caps: 0
 
 [AID_VENDOR_QTI_DIAG]
-value: 2901
+value:2901
 
 [AID_VENDOR_QDSS]
-value: 2902
+value:2902
 
 [AID_VENDOR_RFS]
-value: 2903
+value:2903
 
 [AID_VENDOR_RFS_SHARED]
-value: 2904
+value:2904
 
 [AID_VENDOR_ADPL_ODL]
-value: 2905
+value:2905
 
 [AID_VENDOR_QRTR]
-value: 2906
+value:2906
 
-# Vendor binary permissions and capabilities
-# Format: [path] mode: user: group: caps: [citation:2]
+[AID_VENDOR_THERMAL]
+value:2907
+
+[AID_VENDOR_FASTRPC]
+value:2908
+
+[AID_VENDOR_QTR]
+value:2909
+
+[vendor/bin/wcnss_filter]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND
+
+[system/vendor/bin/wcnss_filter]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND
+
+[vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti-lazy]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti-lazy]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[system/bin/cnss-daemon]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: NET_BIND_SERVICE
 
 [vendor/bin/pm-service]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE SYS_BOOT
+caps: NET_BIND_SERVICE
+
+[system/vendor/bin/pm-service]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE
+
+[system/bin/pm-service]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE
+
+[vendor/bin/pd-mapper]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE
+
+[system/vendor/bin/pd-mapper]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE
+
+[system/bin/pd-mapper]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE
 
 [vendor/bin/imsdatadaemon]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE
+
+[system/vendor/bin/imsdatadaemon]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE
+
+[vendor/bin/ims_rtp_daemon]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE
+
+[system/vendor/bin/ims_rtp_daemon]
 mode: 0755
 user: AID_RADIO
 group: AID_RADIO
@@ -40,17 +139,59 @@ user: AID_RADIO
 group: AID_RADIO
 caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
 
+[system/vendor/bin/imsrcsd]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+
+[vendor/bin/imsdaemon]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
+
 [vendor/bin/cnd]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE NET_ADMIN BLOCK_SUSPEND
+caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
+
+[system/vendor/bin/cnd]
+mode: 0755
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
+
+[vendor/bin/slim_daemon]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: NET_BIND_SERVICE
+
+[system/vendor/bin/slim_daemon]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: NET_BIND_SERVICE
 
 [vendor/bin/loc_launcher]
 mode: 0755
-user: AID_GPS
+user:  AID_GPS
 group: AID_GPS
 caps: SETUID SETGID
+
+[system/vendor/bin/loc_launcher]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: SETUID SETGID
+
+[vendor/bin/xtwifi-client]
+mode: 0755
+user:  AID_GPS
+group: AID_GPS
+caps: NET_BIND_SERVICE BLOCK_SUSPEND WAKE_ALARM
 
 [vendor/bin/sensors.qti]
 mode: 0755
@@ -58,20 +199,31 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE
 
-# Directory permissions for critical mount points [citation:4]
-[persist/]
-mode: 0771
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
 [firmware/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
+[firmware/image/*]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
 [vendor/firmware_mnt/image/*]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[bt_firmware/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[persist/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
