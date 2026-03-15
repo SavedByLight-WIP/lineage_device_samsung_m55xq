@@ -98,10 +98,6 @@
             <name>IKeyMintDevice</name>
             <instance>default</instance>
         </interface>
-        <interface>
-            <name>IRemotelyProvisionedComponent</name>
-            <instance>default</instance>
-        </interface>
         <fqname>IKeyMintDevice/default</fqname>
     </hal>
     <hal format="aidl" override="true">
