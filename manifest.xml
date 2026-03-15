@@ -681,6 +681,7 @@
     </hal>
     <hal format="aidl">
         <name>vendor.samsung.hardware.snap</name>
+        <version>1.0</version>
         <fqname>ISehSnap/default</fqname>
         <fqname>ISehSnap/secsnap</fqname>
     </hal>
