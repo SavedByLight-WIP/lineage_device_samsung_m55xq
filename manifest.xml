@@ -679,12 +679,18 @@
         </interface>
         <fqname>@1.0::ISehSkpm/default</fqname>
     </hal>
-    <hal format="aidl">
-        <name>vendor.samsung.hardware.snap</name>
-        <version>1.0</version>
-        <fqname>ISehSnap/default</fqname>
-        <fqname>ISehSnap/secsnap</fqname>
-    </hal>
+    <hal format="hidl">
+    <name>vendor.samsung.hardware.snap</name>
+    <transport>hwbinder</transport>
+    <version>1.0</version>
+    <interface>
+        <name>ISehSnap</name>
+        <instance>default</instance>
+        <instance>secsnap</instance>
+    </interface>
+    <fqname>@1.0::ISehSnap/default</fqname>
+    <fqname>@1.0::ISehSnap/secsnap</fqname>
+</hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.sysinput</name>
         <transport>hwbinder</transport>
