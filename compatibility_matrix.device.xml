@@ -1,4 +1,4 @@
-<compatibility-matrix version="2.0" type="device" level="6">
+<compatibility-matrix version="2.0" type="framework" level="6">
     <hal format="aidl" optional="true">
         <name>android.hardware.authsecret.qti.spu</name>
         <interface>
