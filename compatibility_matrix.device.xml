@@ -67,21 +67,6 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.nfc</name>
-        <version>1.0</version>
-        <interface>
-            <name>INfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.nfc</name>
-        <interface>
-            <name>INfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.nfc</name>
         <version>1.2</version>
         <interface>
             <name>INfc</name>
@@ -777,13 +762,6 @@
         <version>1.0</version>
         <interface>
             <name>IQtiExtendedFingerprint</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.fingerprint</name>
-        <interface>
-            <name>IQfpExtendedFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -1827,22 +1805,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.nfc</name>
-        <version>2.0</version>
-        <interface>
-            <name>ISehNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.nfc</name>
-        <version>2.0</version>
-        <interface>
-            <name>ISehNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.samsung.hardware.radio</name>
         <version>2.2</version>
         <interface>
@@ -2076,7 +2038,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.wifi</name>
-         <version>2.3</version>
+         <version>2</version>
         <interface>
             <name>ISehWifi</name>
             <instance>default</instance>
@@ -2114,6 +2076,7 @@
         <sepolicy-version>33.0</sepolicy-version>
         <sepolicy-version>34.0</sepolicy-version>
         <sepolicy-version>202404</sepolicy-version>
+        <sepolicy-version>202504</sepolicy-version>
     </sepolicy>
     <avb>
         <vbmeta-version>1.0</vbmeta-version>
