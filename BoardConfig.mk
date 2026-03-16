@@ -28,6 +28,9 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
 
+# QCOM
+BOARD_USES_QCOM_HARDWARE := true
+
 # Display
 TARGET_SCREEN_DENSITY := 450
 
@@ -68,6 +71,17 @@ BOARD_USES_VENDOR_RAMDISK := false
 BOARD_BUILD_VENDOR_RAMDISK_IMAGE := false
 TARGET_COPY_OUT_VENDOR_RAMDISK := vendor
 AB_OTA_UPDATER := false
+
+BOARD_ROOT_EXTRA_FOLDERS += \
+    carrier \
+    efs \
+    metadata \
+    misc \
+    omr \
+    optics \
+    prism \
+    spu \
+    dqmdbg
 
 # Platform
 TARGET_BOARD_PLATFORM := taro
@@ -116,7 +130,7 @@ TARGET_ODM_DLKM_PROP += $(DEVICE_PATH)/odm_dlkm.prop
 TARGET_VENDOR_DLKM_PROP += $(DEVICE_PATH)/vendor_dlkm.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.ramplus
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -135,7 +149,10 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # VINTF
 DEVICE_MANIFEST_FILE := device/samsung/m55xq/manifest.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/m55xq/compatibility_matrix.device.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 # Inherit the proprietary files
 include vendor/samsung/m55xq/BoardConfigVendor.mk
