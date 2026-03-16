@@ -48,5 +48,5 @@ Value *VerifyBootloader(const char *name, State *state,
 }
 
 void Register_librecovery_updater_samsung_taro() {
-  RegisterFunction("samsung_sm8250.verify_bootloader_min", VerifyBootloader);
+  RegisterFunction("samsung_taro.verify_bootloader_min", VerifyBootloader);
 }
