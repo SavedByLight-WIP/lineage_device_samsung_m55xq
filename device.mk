@@ -171,5 +171,12 @@ PRODUCT_SOONG_NAMESPACES += \
 
 #DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/m55xq/compatibility_matrix.device.xml
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilts/modules/vendor_dlkm,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+
+
+PRODUCT_COPY_FILES += \   
+    $(DEVICE_PATH)recovery/root/lib/modules.load:$(TARGET_COPY_OUT_RECOVERY)/root/lib/modules/modules.load
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/m55xq/m55xq-vendor.mk)
