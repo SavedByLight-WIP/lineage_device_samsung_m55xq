@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.recovery.samsung.rc \
    
-LOCAL_NOTICE_FILE := $(DEVICE_PATH)/NOTICE.xml.gz
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/NOTICE.xml.gz
  
  # NFC
 PRODUCT_PACKAGES += \
