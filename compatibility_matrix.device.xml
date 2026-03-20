@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Device Framework Compatibility Matrix -->
-<compatibility-matrix version="1.0" type="device" level="202404">
+<compatibility-matrix version="1.0" type="framework">
     <hal format="hidl" optional="true">
         <name>vendor.samsung.hardware.security.sem</name>
         <version>1.0</version>
