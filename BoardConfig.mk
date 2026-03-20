@@ -154,7 +154,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
-BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(LOCAL_PATH)/rootdir/modules/vendor_dlkm/*.ko)
+#BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(LOCAL_PATH)/rootdir/modules/vendor_dlkm/*.ko)
 
 # Inherit the proprietary files
 include vendor/samsung/m55xq/BoardConfigVendor.mk
