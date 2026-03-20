@@ -173,7 +173,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 #PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)rootdir/modules/vendor_dlkm/modules.load:$(TARGET_COPY_OUT_VENDOR)/root/lib/modules/modules.load
-    $(call find-copy-subdir-files,*.ko,$(LOCAL_PATH)/rootdir/modules/vendor_dlkm,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+    #$(call find-copy-subdir-files,*.ko,$(LOCAL_PATH)/rootdir/modules/vendor_dlkm,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 
 PRODUCT_COPY_FILES += \
