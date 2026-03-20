@@ -124,6 +124,7 @@ TARGET_USE_QTI_BT_AUDIO_STACK := true
 # SEPolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
