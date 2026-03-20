@@ -171,7 +171,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 #DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/m55xq/compatibility_matrix.device.xml
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)rootdir/modules/vendor_dlkm/modules.load:$(TARGET_COPY_OUT_VENDOR)/root/lib/modules/modules.load
     $(call find-copy-subdir-files,*.ko,$(LOCAL_PATH)/rootdir/modules/vendor_dlkm,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
