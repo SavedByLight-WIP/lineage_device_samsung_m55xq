@@ -65,7 +65,7 @@ BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
---header_version=$(BOARD_BOOTIMG_HEADER_VERSION) \
+--header_version=2 \
 --dtb=$(TARGET_PREBUILT_DTB)
 
 # Partitions
