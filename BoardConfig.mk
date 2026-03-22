@@ -66,7 +66,7 @@ BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
 --header_version=2 \
---dtb=$(TARGET_PREBUILT_DTB)
+--dtb=$(LOCAL_PATH)/prebuilts/dtb.img
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
