@@ -202,11 +202,10 @@ BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/recovery/mo
 BOARD_RECOVERY_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/recovery/*.ko)
 BOARD_RECOVERY_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/recovery/modules.load.recovery
 
-
 # Vendor Modules
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
+#BOARD_VENDOR_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/*.ko)
-BOARD_VENDOR_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
+#BOARD_VENDOR_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
 
 # Vendor_boot Modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/vendor_boot/modules.load.recovery
