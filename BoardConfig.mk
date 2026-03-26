@@ -205,5 +205,10 @@ BOARD_RECOVERY_KERNEL_MODULES += $(wildcard $(LOCAL_PATH)/rootdir/modules/recove
 BOARD_VENDOR_KERNEL_MODULES_LOAD    := $(LOCAL_PATH)/rootdir/modules/vendor_dlkm/modules.load
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(LOCAL_PATH)/rootdir/modules/vendor_dlkm/*.ko)
 
+# Vendor_boot Modules
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(LOCAL_PATH)/rootdir/modules/vendor_boot/modules.load.recovery
+BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(LOCAL_PATH)/rootdir/modules/vendor_boot/*.ko)
+
+
 # Inherit the proprietary files
 include vendor/samsung/m55xq/BoardConfigVendor.mk
