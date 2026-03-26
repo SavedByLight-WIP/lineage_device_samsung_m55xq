@@ -3,7 +3,7 @@
 /dqmdbg                         u:object_r:dqmdbg_file:s0
 /dqmdbg(/.*)?                   u:object_r:dqmdbg_file:s0
 
-/misc           u:object_r:misc_file:s0
+/misc           u:object_r:rootfs:s0
 /carrier        u:object_r:rootfs:s0
 /efs            u:object_r:efs_file:s0
 /omr            u:object_r:rootfs:s0
