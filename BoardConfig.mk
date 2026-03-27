@@ -8,9 +8,6 @@ DEVICE_PATH := device/samsung/m55xq
 AB_OTA_UPDATER := false
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_ENFORCE_VINTF_MANIFEST := true
-PRODUCT_NOTICE_SPLIT := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -101,8 +98,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor prod
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 BOARD_USES_VENDOR_RAMDISK := true
 BOARD_BUILD_VENDOR_RAMDISK_IMAGE := true
-#PRODUCT_BUILD_SYSTEM_DLKM_IMAGE := false
-#PRODUCT_BUILD_ODM_DLKM_IMAGE := false
 BOARD_VENDOR_RAMDISK_IMAGE := $(PRODUCT_OUT)/vendor_ramdisk.img
 BOARD_VENDOR_BOOT_IMAGE := $(PRODUCT_OUT)/vendor_boot.img
 BOARD_MOVE_RECOVERY_TO_RAMDISK_BOOT := true
@@ -160,9 +155,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-#TARGET_SYSTEM_DLKM_PROP += $(DEVICE_PATH)/system_dlkm.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-#TARGET_ODM_DLKM_PROP += $(DEVICE_PATH)/odm_dlkm.prop
 TARGET_VENDOR_DLKM_PROP += $(DEVICE_PATH)/vendor_dlkm.prop
 
 # Recovery
@@ -204,20 +197,10 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     device/samsung/m55xq/compatibility_matrix.device.xml
 
-# Recovery Modules
-BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/recovery/modules.load.recovery
+# Modules
 BOARD_RECOVERY_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/recovery/*.ko)
-#BOARD_RECOVERY_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/recovery/modules.load.recovery
-
-# Vendor Modules
-#BOARD_VENDOR_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/*.ko)
-#BOARD_VENDOR_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/vendor_dlkm/modules.load
-
-# Vendor_boot Modules
-#BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(DEVICE_PATH)/rootdir/modules/vendor_boot/modules.load.recovery
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/vendor_boot/*.ko)
-#BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(DEVICE_PATH)/rootdir/modules/vendor_boot/modules.load.recovery
 
 # Inherit the proprietary files
 include vendor/samsung/m55xq/BoardConfigVendor.mk
