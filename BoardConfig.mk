@@ -57,7 +57,7 @@ TARGET_KERNEL_VERSION := 5.10.226
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
-TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilts/dtb.img
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
 BOARD_PREBUILT_RECOVERY_DTB := $(DEVICE_PATH)/prebuilts/recovery_dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
 BOARD_PREBUILT_RECOVERY_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/recovery_dtbo.img
@@ -80,7 +80,7 @@ BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
 --header_version=2 \
---dtb=$(DEVICE_PATH)/prebuilts/recovery_dtb.img
+--dtb=$(BOARD_PREBUILT_RECOVERY_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
