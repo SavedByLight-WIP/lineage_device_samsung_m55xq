@@ -19,9 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 34
 
-# Skip notice files generation
-BUILD_NOTICE_FILES := false
-
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
@@ -94,7 +91,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.recovery.samsung.rc \
    
-LOCAL_NOTICE_FILE := $(LOCAL_PATH)/NOTICE.xml.gz
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/etc/NOTICE.xml.gz
  
  # NFC
 PRODUCT_PACKAGES += \
