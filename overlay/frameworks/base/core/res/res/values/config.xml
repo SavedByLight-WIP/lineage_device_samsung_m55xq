@@ -80,9 +80,6 @@
          DOZE_SUSPEND states. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
-    <!-- If true, the display will be shifted around in ambient mode. -->
-    <bool name="config_enableBurnInProtection">true</bool>
-    
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
