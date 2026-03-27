@@ -10,7 +10,7 @@ AB_OTA_UPDATER := false
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Don't build super.img — Samsung devices flash partitions individually
-PRODUCT_BUILD_SUPER_PARTITION := false
+#PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Architecture
 TARGET_ARCH := arm64
