@@ -34,6 +34,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENABLE_UFFD_GC := true
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+
+# Runtime Resource Overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
