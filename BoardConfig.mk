@@ -24,7 +24,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 
-
 # Bootloader
 BOARD_VENDOR := samsung
 TARGET_SOC := taro
@@ -208,7 +207,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    device/samsung/m55xq/compatibility_matrix.device.xml
+    device/samsung/m55xq/etc/compatibility_matrix.device.xml
 
 # Modules
 BOARD_RECOVERY_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules/recovery/*.ko)
