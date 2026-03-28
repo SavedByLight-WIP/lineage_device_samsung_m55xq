@@ -95,6 +95,7 @@ BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --header_version=2 \
 --dtb=$(BOARD_PREBUILT_RECOVERY_DTB)
 
+# mkbootimg vendor_boot
 BOARD_VENDOR_BOOTIMAGE_ARGS := \
 --board=SRPWI19A004 \
 --pagesize=4096 \
