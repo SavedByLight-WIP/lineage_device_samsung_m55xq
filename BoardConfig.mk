@@ -81,7 +81,7 @@ BOARD_MKBOOTIMG_ARGS:= \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
 --dtb_offset=0x01f00000 \
---header_version-2 \
+--header_version=4 \
 --dtb=$(TARGET_PREBUILT_DTB)
 
 # mkbootimg recovery
