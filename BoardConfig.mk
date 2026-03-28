@@ -9,9 +9,6 @@ AB_OTA_UPDATER := false
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-# Don't build super.img — Samsung devices flash partitions individually
-#PRODUCT_BUILD_SUPER_PARTITION := false
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -45,10 +42,6 @@ TARGET_SCREEN_HEIGHT := 1080
 TARGET_SCREEN_WIDTH := 2340
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 4
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := m55xq_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/m55xq
@@ -80,23 +73,38 @@ BOARD_PREBUILT_RECOVERY_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/recovery_dtbo.img
 
 # mkbootimg
 BOARD_MKBOOTIMG_ARGS:= \
---board=SRPWI19A003 \
---dtb_offset=0x01f00000 \
+--board=SRPWI19A004 \
+--pagesize=4096 \
+--base=0x00000000 \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
---header_version=$(BOARD_BOOT_HEADER_VERSION) \
+--dtb_offset=0x01f00000 \
+--header_version-2 \
 --dtb=$(TARGET_PREBUILT_DTB)
 
 # mkbootimg recovery
 BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --board=SRPWI19A003 \
+--pagesize=4096
+--base=0x00000000 \
 --dtb_offset=0x01f00000 \
 --kernel_offset=0x00008000 \
 --ramdisk_offset=0x02000000 \
 --tags_offset=0x01e00000 \
 --header_version=2 \
 --dtb=$(BOARD_PREBUILT_RECOVERY_DTB)
+
+BOARD_VENDOR_BOOTIMAGE_ARGS := \
+--board=SRPWI19A004 \
+--pagesize=4096 \
+--base=0x00000000 \
+--kernel_offset=0x00008000 \
+--ramdisk_offset=0x02000000 \
+--tags_offset=0x01e00000 \
+--dtb_offset=0x01f00000 \
+--header_version-2 \
+--dtb=$(TARGET_PREBUILT_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
