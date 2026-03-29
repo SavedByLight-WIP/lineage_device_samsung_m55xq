@@ -76,7 +76,7 @@ BOARD_MKBOOTIMG_ARGS:= \
 --board=SRPWI19A004 \
 --pagesize=4096 \
 --base=0x00000000 \
---kernel_offset=0x00008000 \ \
+--kernel_offset=0x00008000 \
 --dtb_offset=0x01f00000 \
 --header_version=4 \
 --dtb=$(TARGET_PREBUILT_DTB)
@@ -92,18 +92,6 @@ BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --tags_offset=0x01e00000 \
 --header_version=2 \
 --dtb=$(BOARD_PREBUILT_RECOVERY_DTB)
-
-# mkbootimg vendor_boot
-BOARD_VENDOR_BOOTIMAGE_ARGS := \
---board=SRPWI19A004 \
---pagesize=4096 \
---base=0x00000000 \
---kernel_offset=0x00008000 \
---ramdisk_offset=0x02000000 \
---tags_offset=0x01e00000 \
---dtb_offset=0x01f00000 \
---header_version-2 \
---dtb=$(TARGET_PREBUILT_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -141,7 +129,6 @@ BOARD_USES_VENDOR_RAMDISK := true
 BOARD_BUILD_VENDOR_RAMDISK_IMAGE := true
 BOARD_VENDOR_RAMDISK_IMAGE := $(PRODUCT_OUT)/vendor_ramdisk.img
 BOARD_VENDOR_BOOT_IMAGE := $(PRODUCT_OUT)/vendor_boot.img
-BOARD_MOVE_RECOVERY_TO_RAMDISK_BOOT := true
 BOARD_USES_VENDOR_DLKM_PARTITION := true
 BOARD_USES_METADATA_PARTITION := true
 
@@ -212,7 +199,6 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
