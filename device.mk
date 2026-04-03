@@ -92,7 +92,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.ramplus \
-    fstab.qcom \
     init.m55xq.rc \
     init.qcom.factory.rc \
     init.qcom.rc \
