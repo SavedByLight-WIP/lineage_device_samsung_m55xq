@@ -19,14 +19,25 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 34
 
+
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot-service.qti \
+    android.hardware.boot-service.qti.recovery
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# Crypto Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl
+
+# Crypto Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-service
 
 # Health
 PRODUCT_PACKAGES += \
@@ -34,10 +45,94 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# Boot control
+# NFC
 PRODUCT_PACKAGES += \
-    android.hardware.boot-service.qti \
-    android.hardware.boot-service.qti.recovery
+    android.hardware.nfc-service.nxp \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag \
+    SecureElement \
+
+# misc
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf-hal-service \
+    vendor.qti.hardware.iop@2.0-service \
+    libqti-perfd-client
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service \
+    vendor.qti.hardware.power.powermodule@1.0
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    vibrator.default
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.3-service.coral
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.qti-v2
+
+PRODUCT_PACKAGES += \       android.hardware.sensors@2.1-service.multihal \
+    sensors.ssc \
+    libsensorcal
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss-aidl-service-qti \
+    libgps.utils \
+    libloc_core \
+    liblocation_api \
+    xtra-daemon
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4-service.widevine \
+    android.hardware.drm@1.4-service.clearkey \
+    libwvhidl \
+    liboemcrypto
+
+# Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service \
+    vendor.qti.media.c2@1.0-service \
+    vendor.qti.media.c2audio@1.0-service \
+    libstagefrighthw \
+    libOmxCore \
+    libcodec2_vendor \
+    media_codecs_*.xml
+
+# Display
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.display.color@1.0-service \
+    libgralloc.qti \
+    libqdMetaData \
+    libsdmcore
+
+# Camera
+PRODUCT_PACKAGES += \
+    vendor.qti.camera.provider@2.7-service_64 \
+    libcamxcommonutils \
+    libchilog \
+    com.qti.chi.override
+
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio.service \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
+    audio.primary.taro \
+    audio.r_submix.default \
+    audio.usb.default \
+    libagmclient \
+    libpalclient \
+    vendor.qti.hardware.pal@1.0-impl \
+    vendor.qti.hardware.AGMIPC@1.0-service
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
@@ -106,14 +201,6 @@ PRODUCT_PACKAGES += \
     init.recovery.samsung.rc \
    
 LOCAL_NOTICE_FILE := $(LOCAL_PATH)/etc/NOTICE.xml.gz
- 
- # NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.nxp \
-    com.android.nfc_extras \
-    NfcNci \
-    Tag \
-    SecureElement \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
@@ -122,9 +209,26 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
     
 # WiFi
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
     libwifi-hal-ctrl \
@@ -132,6 +236,15 @@ PRODUCT_COPY_FILES += \
     libwpa_client \
     wpa_supplicant \
     wpa_cli
+
+PRODUCT_PACKAGES += \
+    rild \
+    ims_rtp_daemon \
+    cnd \
+    dpmQmiMgr \
+    qrtr-ns \
+    pd-mapper \
+    vendor.samsung.hardware.radio@2.2-service
 
 PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/wlan \
@@ -151,7 +264,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml
     
 # Bluetooth
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.qti \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
