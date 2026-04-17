@@ -236,10 +236,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.trustedui@1.0-service-qti \
     vendor.qti.hardware.tui_comm@1.0-service-qti
 
-# WiFi (old HIDL service alongside the AIDL one)
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
-
 # Samsung HAL services
 PRODUCT_PACKAGES += \
     vendor.samsung.hardware.authfw@1.0-service \
