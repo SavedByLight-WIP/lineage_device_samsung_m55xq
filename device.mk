@@ -19,7 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 34
 
-
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
@@ -51,29 +50,18 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     NfcNci \
     Tag \
-    SecureElement \
+    SecureElement
 
 # Vibrator
 PRODUCT_PACKAGES += \
     vibrator.default
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
-    sensors.ssc \
-    libsensorcal
-
-# DRM
-PRODUCT_PACKAGES += \
-    libwvhidl \
-    liboemcrypto
+    android.hardware.sensors@2.1-service.multihal 
 
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
-    vendor.qti.media.c2@1.0-service \
-    vendor.qti.media.c2audio@1.0-service \
-    libstagefrighthw \
-    libOmxCore \
     libcodec2_vendor \
     media_codecs_*.xml
 
@@ -81,7 +69,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.display.allocator-service \
-    vendor.display.color@1.0-service \
     libgralloc.qti \
     libqdMetaData \
     libsdmcore
@@ -228,15 +215,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_cli
 
-PRODUCT_PACKAGES += \
-    rild \
-    ims_rtp_daemon \
-    cnd \
-    dpmQmiMgr \
-    qrtr-ns \
-    pd-mapper \
-    vendor.samsung.hardware.radio@2.2-service
-
 PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom-caf/wlan \
     hardware/qcom-caf/wlan/qcwcn
@@ -263,8 +241,7 @@ PRODUCT_PACKAGES += \
     libbluetooth_audio_session \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor \
-    com.qualcomm.qti.bluetooth_audio@1.0.vendor
+    vendor.qti.hardware.btconfigstore@2.0.vendor 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/bt_profile.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_profile.conf \
