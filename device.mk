@@ -61,9 +61,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-service \
-    libcodec2_vendor \
-    media_codecs_*.xml
+    android.hardware.media.omx@1.0-service 
 
 # Display
 PRODUCT_PACKAGES += \
@@ -100,17 +98,12 @@ PRODUCT_PACKAGES += \
     
 # IPA (data offload)
 PRODUCT_PACKAGES += \
-    ipacm \
-    ipacm-diag
+    ipacm 
 
 # PASR (memory management)
 PRODUCT_PACKAGES += \
     vendor.qti.memory.pasrmanager@1.0-service
-
-# Sensors calibration
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.sensorscalibrate@1.0-service
-
+    
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
@@ -237,7 +230,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
     com.dsi.ant@1.0.vendor \
-    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     libbluetooth_audio_session \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
