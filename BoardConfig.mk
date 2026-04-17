@@ -227,6 +227,3 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(wildcard $(DEVICE_PATH)/rootdir/modules
 
 # Maintainer
 PRODUCT_MAINTAINER := SavedByLight, Subhu2008, console-ramoops
-
-# Inherit the proprietary files
-include vendor/samsung/m55xq/BoardConfigVendor.mk
