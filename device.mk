@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
 # CAS
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
 
 # Configstore
@@ -427,3 +427,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/samsung
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/samsung/m55xq/m55xq-vendor.mk)
