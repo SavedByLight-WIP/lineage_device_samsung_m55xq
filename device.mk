@@ -56,9 +56,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vibrator.default
 
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal 
-
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service 
