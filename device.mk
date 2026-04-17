@@ -134,6 +134,137 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.pal@1.0-impl \
     vendor.qti.hardware.AGMIPC@1.0-service
 
+# ADSP / CDSP
+PRODUCT_PACKAGES += \
+    adsprpcd \
+    cdsprpcd
+
+# Atrace
+PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service
+
+# CAS
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.2-service-lazy
+
+# Configstore
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.capabilityconfigstore@1.0-service
+
+# Display (missing from your display block)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.demura-service
+
+# DSP
+PRODUCT_PACKAGES += \
+    dspservice
+
+# Dumpstate
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1-service-lazy
+
+# eID (payment secure element)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.eid@1.0-service
+
+# Health — Samsung replaces the generic service
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-service-samsung
+
+# IPA (data offload)
+PRODUCT_PACKAGES += \
+    ipacm \
+    ipacm-diag
+
+# Lights
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.lights.service
+
+# Media (Samsung C2 and secure audio HAL AIDL)
+PRODUCT_PACKAGES += \
+    samsung.software.media.c2@1.0-service \
+    secaudiohalaidl \
+    mppserver
+
+# NFC — Samsung SEC service (replaces nxp in your PRODUCT_PACKAGES)
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.sec
+
+# PASR (memory management)
+PRODUCT_PACKAGES += \
+    vendor.qti.memory.pasrmanager@1.0-service
+
+# Power (Samsung supplement)
+PRODUCT_PACKAGES += \
+    android.hardware.power.samsung-service
+
+# QSEECOM / TEE
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.qseecom@1.0-service \
+    qseecomd \
+    vendor.qti.hardware.qteeconnector@1.0-service
+
+# QSPM
+PRODUCT_PACKAGES += \
+    vendor.qti.qspmhal@1.0-service
+
+# SPU / Secure Processor
+PRODUCT_PACKAGES += \
+    vendor.qti.spu@1.1-service \
+    vendor.qti.spu@2.0-service \
+    vendor.qti.hardware.secureprocessor@1.0
+
+# Sensors calibration
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.sensorscalibrate@1.0-service
+
+# Service tracker
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.servicetracker@1.2-service
+
+# Thermal limits
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.limits@1.1-service
+
+# Time daemon
+PRODUCT_PACKAGES += \
+    time_daemon
+
+# Trusted UI
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.trustedui@1.0-service-qti \
+    vendor.qti.hardware.tui_comm@1.0-service-qti
+
+# WiFi (old HIDL service alongside the AIDL one)
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service
+
+# Samsung HAL services
+PRODUCT_PACKAGES += \
+    vendor.samsung.hardware.authfw@1.0-service \
+    vendor.samsung.hardware.biometrics.face.jdm-service \
+    vendor.samsung.hardware.biometrics.fingerprint@3.0-service \
+    vendor.samsung.hardware.displayquality-service \
+    vendor.samsung.hardware.hyper-service \
+    vendor.samsung.hardware.light-service \
+    vendor.samsung.hardware.media.converter@1.0-service \
+    vendor.samsung.hardware.miscpower@2.0-service \
+    vendor.samsung.hardware.securesnap-service \
+    vendor.samsung.hardware.security.drk@2.0-service \
+    vendor.samsung.hardware.security.hermes-service \
+    vendor.samsung.hardware.security.sem@1.0-service \
+    vendor.samsung.hardware.security.skpm@1.0-service \
+    vendor.samsung.hardware.security.widevine.keyprov-service \
+    vendor.samsung.hardware.snap-service \
+    vendor.samsung.hardware.sysinput@1.3-service \
+    vendor.samsung.hardware.tlc.iccc@1.0-service \
+    vendor.samsung.hardware.tlc.kg-service \
+    vendor.samsung.hardware.tlc.payment@1.0-service \
+    vendor.samsung.hardware.tlc.ucm@2.0-service \
+    vendor.samsung.hardware.vibrator-service \
+    vendor.samsung.hardware.wifi@2.0-service \
+    macloader
+
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 
@@ -292,8 +423,3 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/samsung
-
-#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/m55xq/compatibility_matrix.device.xml
-
-# Inherit the proprietary files
-$(call inherit-product, vendor/samsung/m55xq/m55xq-vendor.mk)
