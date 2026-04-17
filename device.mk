@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
 # CAS
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service-lazy
 
 # Configstore
