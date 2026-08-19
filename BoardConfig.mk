@@ -84,7 +84,7 @@ BOARD_MKBOOTIMG_ARGS:= \
 # mkbootimg recovery
 BOARD_RECOVERY_MKBOOTIMG_ARGS := \
 --board=SRPWI19A003 \
---pagesize=4096
+--pagesize=4096 \
 --base=0x00000000 \
 --dtb_offset=0x01f00000 \
 --kernel_offset=0x00008000 \
