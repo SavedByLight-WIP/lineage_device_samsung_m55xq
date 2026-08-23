@@ -2,14 +2,8 @@
 
 ## Clone M556BXXS4BYH2
 ```
-git clone https://github.com/SavedByLight-WIP/android_vendor_samsung_m55xq.git -b M556BXXS4BYH2 vendor/samsung/m55xq
-git clone https://github.com/SavedByLight-WIP/lineage_device_samsung_m55xq -b lineage-23.2 device/samsung/m55xq
-```
-
-## Clone M558BXXS2BYH2
-```
-git clone https://github.com/SavedByLight-WIP/android_vendor_samsung_m55xq.git -b M558BXXS2BYH2 vendor/samsung/m55xq
-git clone https://github.com/SavedByLight-WIP/lineage_device_samsung_m55xq -b lineage-23.2 device/samsung/m55xq
+git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b lineage-23.2 vendor/samsung/m55xq
+git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b lineage-23.2 device/samsung/m55xq
 ```
 
 ## Build
