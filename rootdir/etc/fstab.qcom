@@ -39,10 +39,20 @@ system	/system	erofs	ro	wait,logical,first_stage_mount,avb=vbmeta_system,avb_key
 system	/system	f2fs	ro	wait,logical,first_stage_mount,avb=vbmeta_system,avb_keys=/avb
 system	/system	ext4	ro	wait,logical,first_stage_mount,avb=vbmeta_system,avb_keys=/avb
 system_ext	/system_ext	erofs	ro	wait,logical,first_stage_mount,avb
+system_ext	/system_ext	f2fs	ro	wait,logical,first_stage_mount,avb
+system_ext	/system_ext	ext4	ro	wait,logical,first_stage_mount,avb
 product	/product	erofs	ro	wait,logical,first_stage_mount,avb
+product /product  f2fs  ro  wait,logical,first_stage_mount,avb
+product /product  ext4  ro  wait,logical,first_stage_mount,avb
 vendor	/vendor	erofs	ro	wait,logical,first_stage_mount,avb=vbmeta_system
+vendor	/vendor	f2fs	ro	wait,logical,first_stage_mount,avb=vbmeta_system
+vendor	/vendor	ext4	ro	wait,logical,first_stage_mount,avb=vbmeta_system
 vendor_dlkm	/vendor_dlkm	erofs	ro	wait,logical,first_stage_mount,avb
+vendor_dlkm	/vendor_dlkm	f2fs	ro	wait,logical,first_stage_mount,avb
+vendor_dlkm	/vendor_dlkm	ext4	ro	wait,logical,first_stage_mount,avb
 odm	/odm	erofs	ro	wait,logical,first_stage_mount,avb
+odm	/odm	f2fs  ro	wait,logical,first_stage_mount,avb
+odm	/odm	ext4	ro	wait,logical,first_stage_mount,avb
 /dev/block/by-name/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic,sync	wait,check,formattable,wrappedkey,first_stage_mount
 # M55 code for SR-QN6887A-01-220 by zhaoxinagxiang at 20230822 start
 # M55 code for SR-QN6887A-01-347 by Niebingling at 20230901 start
