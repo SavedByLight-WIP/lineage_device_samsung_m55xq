@@ -1,9 +1,15 @@
 # Android device tree for samsung SM-M556B (m55xq)
 
-## Clone Latest
+## Clone Latest (lineage-23.2)
 ```
 git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b lineage-23.2 vendor/samsung/m55xq
 git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b lineage-23.2 device/samsung/m55xq
+```
+
+## Clone Latest (lineage-24.0)
+```
+git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b lineage-24.0 vendor/samsung/m55xq
+git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b lineage-24.0 device/samsung/m55xq
 ```
 
 ## Clone M556BXXS4BYH2
