@@ -1,27 +1,55 @@
 # Android device tree for samsung SM-M556B (m55xq)
 
-## Clone Latest (lineage-23.2)
+## Make Lineage-23.2 Directory
 ```
-git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b lineage-23.2 vendor/samsung/m55xq
-git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b lineage-23.2 device/samsung/m55xq
+mkdir lineage-23.2; cd lineage-23.2
 ```
+## Init lineage-23.2
+```
+repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
+```
+## Lineage-23.2 Latest (lineage-23.2)
+```
+mkdir -p .repo/local_manifests
 
-## Clone Latest (lineage-24.0)
+cat > .repo/local_manifests/roomservice.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project name="galaxy-m55xq/android_device_samsung_m55xq" path="device/samsung/m55xq" remote="github" revision="lineage-23.2" />
+<project name="galaxy-m55xq/android_vendor_samsung_m55xq" path="vendor/samsung/m55xq" remote="github" revision="lineage-23.2" />
+<project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-23.2" />
+</manifest>
+EOF
 ```
-git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b lineage-24.0 vendor/samsung/m55xq
-git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b lineage-24.0 device/samsung/m55xq
+## Manifest: M556BXXS4BYH2
 ```
+mkdir -p .repo/local_manifests
 
-## Clone M556BXXS4BYH2
+cat > .repo/local_manifests/roomservice.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project name="galaxy-m55xq/android_device_samsung_m55xq" path="device/samsung/m55xq" remote="github" revision="M556BXXS4BYH2" />
+<project name="galaxy-m55xq/android_vendor_samsung_m55xq" path="vendor/samsung/m55xq" remote="github" revision="M556BXXS4BYH2" />
+<project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-23.2" />
+</manifest>
+EOF
 ```
-git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b M556BXXS4BYH2 vendor/samsung/m55xq
-git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b M556BXXS4BYH2 device/samsung/m55xq
+## Manifest M556BXXS5DZF2
 ```
+mkdir -p .repo/local_manifests
 
-## Clone M556BXXS5DZF2
+cat > .repo/local_manifests/roomservice.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<project name="galaxy-m55xq/android_device_samsung_m55xq" path="device/samsung/m55xq" remote="github" revision="M556BXXS5DZF2" />
+<project name="galaxy-m55xq/android_vendor_samsung_m55xq" path="vendor/samsung/m55xq" remote="github" revision="M556BXXS5DZF2" />
+<project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-23.2" />
+</manifest>
+EOF
 ```
-git clone https://github.com/galaxy-m55xq/android_vendor_samsung_m55xq.git -b M556BXXS5DZF2 vendor/samsung/m55xq
-git clone https://github.com/galaxy-m55xq/android_device_samsung_m55xq -b M556BXXS5DZF2 device/samsung/m55xq
+## Repo Sync
+```
+Repo Sync
 ```
 
 ## Build
