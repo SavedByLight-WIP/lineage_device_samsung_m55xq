@@ -18,6 +18,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 34
 
+PRODUCT_COPY_FILES += \
+    device/samsung/m55xq/prebuilts/kernel:$(PRODUCT_OUT)/kernel
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
