@@ -4,7 +4,7 @@
 ```
 mkdir lineage-23.2; cd lineage-23.2
 ```
-## Init lineage-23.2
+## Initialize lineage-23.2 repo
 ```
 repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
 ```
@@ -49,13 +49,20 @@ EOF
 ```
 ## Repo Sync
 ```
-Repo Sync
+repo sync -c -j$(nproc --all)
 ```
 
 ## Build
 ```
 . build/envsetup.sh
 lunch lineage_m55xq-bp4a-userdebug
+mka bacon
+```
+
+## Or for engineering (eng) builds (Useful for debugging)
+```
+. build/envsetup.sh
+lunch lineage_m55xq-bp4a-eng
 mka bacon
 ```
 
