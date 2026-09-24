@@ -20,7 +20,6 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 
 PRODUCT_COPY_FILES += \
     device/samsung/m55xq/prebuilts/kernel:$(PRODUCT_OUT)/kernel
-:$(PRODUCT_OUT)/kernel
 
 # Boot control
 PRODUCT_PACKAGES += \
